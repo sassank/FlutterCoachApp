@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 //this widget is the root of your application
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,13 +16,15 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,
       ),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
 
-  //ecran de bienvenue
+  //welcome screen
   class WelcomeScreen extends StatelessWidget{
+  const WelcomeScreen({super.key});
+
     @override
     Widget build(BuildContext context) {
       return Scaffold(
@@ -29,10 +33,10 @@ class MyApp extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/gym.jpg'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),
@@ -41,7 +45,7 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [TextSpan(text: "Go Coach")]
                     ),
                   ),
