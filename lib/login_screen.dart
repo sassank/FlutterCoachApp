@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {},
                       child: const Text(
                         'Mot de passe oublié?',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
