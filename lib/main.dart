@@ -82,7 +82,7 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white70,
                     ),
                     const Text(
-                      "Ce qui importe, c'est le progrès \n non la perfection.",
+                      "Ce qui importe, c'est le progrès, \n non la perfection.",
                       style: TextStyle(
                         fontSize: 18,
                         height: 1.6,
