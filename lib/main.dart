@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'login_screen.dart'; // Import login screen
 
 void main() => runApp(const MyApp());
 
@@ -44,13 +45,12 @@ class WelcomeScreen extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage('assets/gym.jpg'),
                   fit: BoxFit.fitHeight,
-                  opacity: 0.3,
+                  opacity: 0.2,
                 ),
               ),
-              // Add the RichText widget containing "Go Coach" text here
               child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,// Center vertically
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     RichText(
                       text: const TextSpan(
@@ -58,13 +58,14 @@ class WelcomeScreen extends StatelessWidget {
                           TextSpan(
                             text: "Go Coach",
                             style: TextStyle(
-                              color: Colors.teal,
                               fontSize: 60,
-                              fontWeight: FontWeight.w400,
-                              shadows: [ // Add shadows here!
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 3.0,
+                              shadows: [
                                 Shadow(
-                                  offset: Offset(4.0, 4.0), // Adjust offset for shadow position
-                                  blurRadius: 50.0, // Adjust blurRadius for shadow spread
+                                  offset: Offset(2.0, 2.0),
+                                  blurRadius: 55.0,
                                 ),
                               ],
                             ),
@@ -72,20 +73,56 @@ class WelcomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Divider( // HR (horizontal rule) line
-                      height: 40,
+                    const SizedBox(height: 20), // Reduced spacing above divider
+                    const Divider(
+                      height: 30,
                       thickness: 0.5,
                       indent: 90,
                       endIndent: 90,
-                      color: Colors.white70, // Adjust color as needed
+                      color: Colors.white70,
                     ),
                     const Text(
-                      "Ce qui importe, c'est le progrès, \n non la perfection.",
+                      "Ce qui importe, c'est le progrès \n non la perfection.",
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
+                        letterSpacing: 0.5,
                       ),
-                    )
+                    ),
+                    const SizedBox (height: 80), // Reduced spacing between text and button
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: kPrimaryColor,
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0), // Adjust the horizontal padding
+                      ),
+                      onPressed: () {
+                        // Navigate to login screen
+                        var push = Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                        );
+                        print('Connexion button pressed!');
+                      },
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min, // Use MainAxisSize.min to fit the content
+                        children: [
+                          Text(
+                            'Connexion',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              letterSpacing: 3.0,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
