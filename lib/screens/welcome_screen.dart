@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_coach/login_test.dart'; // Update this import if needed
-import 'constants.dart'; // Ensure this file contains necessary constants like kPrimaryColor
+import 'package:go_coach/screens/login_test.dart'; // Update this import if needed
+import '../constants/constants.dart'; // Ensure this file contains necessary constants like kPrimaryColor
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'constants.dart'; // Make sure this import exists and contains necessary constants
-import 'welcome_screen.dart'; // Importing the WelcomeScreen from the new file
+import 'constants/constants.dart'; // Make sure this import exists and contains necessary constants
+import 'screens/welcome_screen.dart'; // Importing the WelcomeScreen from the new file
 
 void main() => runApp(const MyApp());
 
