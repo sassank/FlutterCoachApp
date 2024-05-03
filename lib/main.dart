@@ -85,15 +85,17 @@ class WelcomeScreen extends StatelessWidget {
                       "Ce qui importe, c'est le progrès \n non la perfection.",
                       style: TextStyle(
                         fontSize: 18,
+                        height: 1.6,
                         color: Colors.white,
                         letterSpacing: 0.5,
                       ),
+                      textAlign: TextAlign.center, // Center align text
                     ),
                     const SizedBox (height: 80), // Reduced spacing between text and button
                     TextButton(
                       style: TextButton.styleFrom(
                         backgroundColor: kPrimaryColor,
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0), // Adjust the horizontal padding
+                        padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 9.0), // Adjust the horizontal padding
                       ),
                       onPressed: () {
                         // Navigate to login screen
@@ -107,15 +109,16 @@ class WelcomeScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min, // Use MainAxisSize.min to fit the content
                         children: [
                           Text(
-                            'Connexion',
+                            'Commencez',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 22,
                               color: Colors.white,
                               fontWeight: FontWeight.normal,
                               letterSpacing: 3.0,
                             ),
                             textAlign: TextAlign.center,
                           ),
+                          SizedBox(width: 10),  // Added space between text and icon
                           Icon(
                             Icons.arrow_forward,
                             color: Colors.white,
