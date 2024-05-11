@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:go_coach/screens/login_test.dart';
-import 'package:go_coach/screens/register_screen.dart';
+import 'package:go_coach/screens/login_screen.dart';
 import 'package:go_coach/screens/welcome_screen.dart';
 
-void main() => runApp(const LoginScreen());
+void main() => runApp(const RegisterScreen());
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login Page',
-      home: const LoginPage(),
+      title: 'Inscription',
+      home: const RegisterPage(),
       theme: ThemeData(
         primarySwatch: Colors.teal,
         inputDecorationTheme: const InputDecorationTheme(
@@ -26,8 +25,8 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,22 +46,15 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Bienvenue',
-                    style: TextStyle(
-                      fontSize: 35,
-                      height: 2,
-                      color: Colors.white,
-                      letterSpacing: 5.5,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Connectez vous',
+                    'Inscrivez-vous !',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 32,
+                      height: 1,
                       color: Colors.white70,
+                      letterSpacing: 3,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -127,7 +119,7 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                            MaterialPageRoute(builder: (context) => const WelcomeScreen()),
                           );
                           print('button pressed!');
                         },
