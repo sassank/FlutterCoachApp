@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_coach/screens/login_test.dart';
 import 'package:go_coach/screens/register_screen.dart';
-import 'package:go_coach/screens/welcome_screen.dart';
 
 void main() => runApp(const LoginScreen());
 
@@ -96,8 +94,8 @@ class LoginPage extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(50),
-                      backgroundColor: Colors.teal,
                       foregroundColor: Colors.white,
+                      backgroundColor: Colors.teal,
                     ),
                     onPressed: () {},
                     child: const Text(
@@ -127,7 +125,7 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                            MaterialPageRoute(builder: (context) => const RegisterPage()),
                           );
                           print('button pressed!');
                         },

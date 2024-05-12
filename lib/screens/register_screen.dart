@@ -1,35 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_coach/screens/login_screen.dart';
-import 'package:go_coach/screens/welcome_screen.dart';
-
-void main() => runApp(const RegisterScreen());
-
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Inscription',
-      home: const RegisterPage(),
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        inputDecorationTheme: const InputDecorationTheme(
-          border: OutlineInputBorder(),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -48,41 +26,63 @@ class RegisterPage extends StatelessWidget {
                 children: [
                   const SizedBox(height: 8),
                   const Text(
-                    'Inscrivez-vous !',
+                    'Créez votre compte',
                     style: TextStyle(
-                      fontSize: 32,
-                      height: 1,
+                      fontSize: 30,
+                      height: 1.5,
+                      letterSpacing: 2,
                       color: Colors.white70,
-                      letterSpacing: 3,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   const SizedBox(height: 30),
                   TextFormField(
                     decoration: const InputDecoration(
-                      labelText: 'Identifiant',
+                      labelText: 'Nom d\'utilisateur',
                       prefixIcon: Icon(Icons.person),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: 'Email',
+                      prefixIcon: Icon(Icons.email),
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: 'Mot de passe',
+                      prefixIcon: Icon(Icons.lock),
                     ),
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
                     obscureText: true,
                     decoration: const InputDecoration(
-                      labelText: 'Mot de passe',
+                      labelText: 'Confirmer le mot de passe',
                       prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.visibility_off),
                     ),
+                    validator: (value) {
+                      if (value != passwordController.text) {
+                        return 'Les mots de passe ne correspondent pas';
+                      }
+                      return null;
+                    },
                   ),
-                  const SizedBox(height: 10),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Mot de passe oublié?',
-                        style: TextStyle(color: Colors.white),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: false,
+                        onChanged: (bool? newValue) {},
                       ),
-                    ),
+                      const Text('Accepter les conditions')
+                    ],
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -93,37 +93,24 @@ class RegisterPage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: const Text(
-                      'Connexion',
-                      style: TextStyle(fontSize: 19, letterSpacing: 5),
+                      'S\'INSCRIRE',
+                      style: TextStyle(fontSize: 16),
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  const Text('OU'),
-                  const SizedBox(height: 15),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      backgroundColor: Colors.white,
-                      minimumSize: const Size.fromHeight(50),
-                    ),
-                    icon: const Icon(Icons.login),
-                    label: const Text('Se connecter avec Google'),
-                    onPressed: () {},
                   ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Vous n'avez pas de compte ?"),
+                      const Text("Vous avez déjà un compte ?"),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+                            MaterialPageRoute(builder: (context) => const LoginScreen()),
                           );
                           print('button pressed!');
                         },
-                        child: const Text('S\'inscrire'),
+                        child: const Text('Se Connecter'),
                       ),
                     ],
                   ),
