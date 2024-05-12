@@ -27,11 +27,11 @@ class RegisterPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   const Text(
                     'Créez votre compte',
+                    textAlign: TextAlign.center,  // Center align text
                     style: TextStyle(
                       fontSize: 30,
-                      height: 1.5,
-                      letterSpacing: 2,
-                      color: Colors.white70,
+                      height: 2,
+                      color: Colors.white,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -94,10 +94,10 @@ class RegisterPage extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'S\'INSCRIRE',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 19),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -108,7 +108,6 @@ class RegisterPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(builder: (context) => const LoginScreen()),
                           );
-                          print('button pressed!');
                         },
                         child: const Text('Se Connecter'),
                       ),
