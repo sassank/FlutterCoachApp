@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_coach/screens/welcome_screen.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'login_screen.dart'; // Make sure this import points to the file where LoginScreen is defined
 
 class LoginTest extends StatefulWidget {
   const LoginTest({super.key});
@@ -36,10 +38,11 @@ class LoginTestState extends State<LoginTest> {
     });
 
     if (response.statusCode == 200) {
-      // Handle successful login (e.g., navigate to home screen)
       print('Login successful!');
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+      );
     } else {
-      // Handle login failure (e.g., show error message)
       print('Login failed: ${response.statusCode}');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

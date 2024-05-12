@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_coach/screens/login_screen.dart';
 import 'package:go_coach/screens/login_test.dart'; // Update this import if needed
-import '../constants/constants.dart'; // Ensure this file contains necessary constants like kPrimaryColor
+import '../constants.dart'; // Ensure this file contains necessary constants like kPrimaryColor
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -75,12 +76,12 @@ class WelcomeScreen extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         backgroundColor: kPrimaryColor,
-                        padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 9.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 15),
                       ),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const LoginTest()),
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
                         );
                         print('button pressed!');
                       },
@@ -90,10 +91,10 @@ class WelcomeScreen extends StatelessWidget {
                           Text(
                             'Commencez',
                             style: TextStyle(
-                              fontSize: 22,
+                              fontSize: 18,
                               color: Colors.white,
                               fontWeight: FontWeight.normal,
-                              letterSpacing: 3.0,
+                              letterSpacing: 4.0,
                             ),
                           ),
                           SizedBox(width: 10),
