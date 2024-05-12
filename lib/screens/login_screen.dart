@@ -48,10 +48,10 @@ class LoginPage extends StatelessWidget {
                   const Text(
                     'Bienvenue',
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 30,
                       height: 2,
                       color: Colors.white,
-                      letterSpacing: 5.5,
+                      letterSpacing: 3,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
