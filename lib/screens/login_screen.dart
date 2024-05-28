@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_coach/screens/register_screen.dart';
+import 'package:go_coach/screens/home_screen.dart'; // Make sure this import path is correct
 
 void main() => runApp(const LoginScreen());
 
@@ -99,7 +100,9 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: 'Mot de passe',
                         prefixIcon: const Icon(Icons.lock),
                         suffixIcon: IconButton(
-                          icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
+                          icon: Icon(_isObscure
+                              ? Icons.visibility_off
+                              : Icons.visibility),
                           onPressed: () {
                             setState(() {
                               _isObscure = !_isObscure;
@@ -134,7 +137,13 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          // Effectuer la connexion ici
+                          // Navigate to home screen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ),
+                          );
                         }
                       },
                       child: const Text(
@@ -164,7 +173,8 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const RegisterPage()),
+                              MaterialPageRoute(
+                                  builder: (context) => const RegisterPage()),
                             );
                           },
                           child: const Text('S\'inscrire'),
