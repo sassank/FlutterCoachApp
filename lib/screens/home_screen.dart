@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_coach/screens/home_page_widget.dart'; // Importez le widget HomePageWidget ici
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -22,68 +23,75 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: _getBodyContent(_selectedIndex),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add action for the floating button
-        },
-        backgroundColor: Colors.teal,
-        child: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 6.0,
-        color: Colors.white,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.dashboard),
-              color: Colors.teal,
-              onPressed: () {
-                _onItemTapped(0);
-              },
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(50),
+          topRight: Radius.circular(50),
+        ),
+        child: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 6.0,
+          color: const Color(0xFF009688), // Teal color
+          child: SizedBox(
+            height: 3.0, // Adjust this value to change the height
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.dashboard),
+                  color: _selectedIndex == 0 ? Colors.white : Colors.black,
+                  onPressed: () {
+                    _onItemTapped(0);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.show_chart),
+                  color: _selectedIndex == 1 ? Colors.white : Colors.black,
+                  onPressed: () {
+                    _onItemTapped(1);
+                  },
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF00796B), // Darker teal color
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.add),
+                    color: _selectedIndex == 2 ? Colors.white : Colors.black,
+                    onPressed: () {
+                      // Add action for the floating button
+                    },
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.fitness_center),
+                  color: _selectedIndex == 3 ? Colors.white : Colors.black,
+                  onPressed: () {
+                    _onItemTapped(3);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.person),
+                  color: _selectedIndex == 4 ? Colors.white : Colors.black,
+                  onPressed: () {
+                    _onItemTapped(4);
+                  },
+                ),
+              ],
             ),
-            IconButton(
-              icon: const Icon(Icons.show_chart),
-              color: Colors.teal,
-              onPressed: () {
-                _onItemTapped(1);
-              },
-            ),
-            const SizedBox(width: 40), // The middle space for the floating button
-            IconButton(
-              icon: const Icon(Icons.fitness_center),
-              color: Colors.teal,
-              onPressed: () {
-                _onItemTapped(2);
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.dashboard, color: Colors.teal), // Set the color to teal
-              onPressed: () {
-                _onItemTapped(0);
-              },
-            ),
-          ],
-        ), // Match the background color to the image
+          ),
+        ),
       ),
     );
   }
 
   Widget _getBodyContent(int index) {
-    switch (index) {
-      case 0:
-        return const Text('Dashboard');
-      case 1:
-        return const Text('Statistics');
-      case 2:
-        return const Text('Workouts');
-      case 3:
-        return const Text('Profile');
-      default:
-        return const Text('Dashboard');
+    if (index == 0) {
+      return HomePageWidget();
+    } else {
+      return const Text('Autre contenu');
     }
   }
 }
