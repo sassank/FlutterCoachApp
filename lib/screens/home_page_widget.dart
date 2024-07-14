@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:go_coach/models/home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -39,9 +37,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         backgroundColor: Colors.white, // Replace with your background color
         appBar: AppBar(
           backgroundColor: Color(0xFF429783),
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.black),
           automaticallyImplyLeading: false,
-          title: Align(
+          title: const Align(
             alignment: AlignmentDirectional(0, 0),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
@@ -76,7 +74,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     verticalDirection: VerticalDirection.down,
                     clipBehavior: Clip.none,
                     children: [
-                      Align(
+                      const Align(
                         alignment: AlignmentDirectional(-1, -1),
                         child: Padding(
                           padding:
@@ -92,7 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 180,
                         child: CarouselSlider(
@@ -146,233 +144,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             autoPlay: false,
                             onPageChanged: (index, _) =>
                                 setState(() => _model.carouselCurrentIndex = index),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(15, 30, 0, 30),
-                        child: Text(
-                          'Training Plan',
-                          style: TextStyle( // Replace with your text style
-                            fontFamily: 'Faustina',
-                            fontSize: 24,
-                            letterSpacing: 0,
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding: EdgeInsets.all(6),
-                          child: GridView(
-                            padding: EdgeInsets.zero,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 10,
-                              childAspectRatio: 1,
-                            ),
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[200], // Replace with your color
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(-1, -1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 0, 0),
-                                        child: Icon(
-                                          Icons.settings_outlined,
-                                          color: Colors.grey, // Replace with your color
-                                          size: 40,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Text(
-                                        'Shoulder Press',
-                                        style: TextStyle( // Replace with your text style
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 18,
-                                          letterSpacing: 0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            25, 0, 0, 20),
-                                        child: Text(
-                                          'Walking is simple, yet powerful exercise for your body',
-                                          style: TextStyle( // Replace with your text style
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[200], // Replace with your color
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(-1, -1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 0, 0),
-                                        child: Icon(
-                                          Icons.settings_outlined,
-                                          color: Colors.grey, // Replace with your color
-                                          size: 40,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Text(
-                                        'Shoulder Press',
-                                        style: TextStyle( // Replace with your text style
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 18,
-                                          letterSpacing: 0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            25, 0, 0, 20),
-                                        child: Text(
-                                          'Walking is simple, yet powerful exercise for your body',
-                                          style: TextStyle( // Replace with your text style
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[200], // Replace with your color
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(-1, -1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 0, 0),
-                                        child: Icon(
-                                          Icons.settings_outlined,
-                                          color: Colors.grey, // Replace with your color
-                                          size: 40,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Text(
-                                        'Shoulder Press',
-                                        style: TextStyle( // Replace with your text style
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 18,
-                                          letterSpacing: 0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            25, 0, 0, 20),
-                                        child: Text(
-                                          'Walking is simple, yet powerful exercise for your body',
-                                          style: TextStyle( // Replace with your text style
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[200], // Replace with your color
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(-1, -1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 0, 0),
-                                        child: Icon(
-                                          Icons.settings_outlined,
-                                          color: Colors.grey, // Replace with your color
-                                          size: 40,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Text(
-                                        'Shoulder Press',
-                                        style: TextStyle( // Replace with your text style
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 18,
-                                          letterSpacing: 0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 1),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            25, 0, 0, 20),
-                                        child: Text(
-                                          'Walking is simple, yet powerful exercise for your body',
-                                          style: TextStyle( // Replace with your text style
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                       ),
