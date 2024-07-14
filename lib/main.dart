@@ -1,8 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart'; // Make sure this import exists and contains necessary constants
-import 'screens/welcome_screen.dart'; // Importing the WelcomeScreen from the new file
+import 'constants.dart';
+import 'screens/welcome_screen.dart';
+import 'firebase_options.dart'; // Ensure this file exists with your Firebase options
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +23,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,
       ),
-      home: const WelcomeScreen(), // Reference to the separated WelcomeScreen
+      home: const WelcomeScreen(),
     );
   }
 }
