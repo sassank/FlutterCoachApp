@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'constants.dart'; // Make sure this import exists and contains necessary constants
-import 'screens/welcome_screen.dart'; // Importing the WelcomeScreen from the new file
+import 'constants.dart';
+import 'screens/welcome_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,
       ),
-      home: const WelcomeScreen(), // Reference to the separated WelcomeScreen
+      home: const WelcomeScreen(),
     );
   }
 }
