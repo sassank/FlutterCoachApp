@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:go_coach/screens/home_page_widget.dart'; // Importez le widget HomePageWidget ici
+import 'package:go_coach/screens/home_page_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -53,9 +53,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: const Color(0xFF00796B), // Darker teal color
+                    color: Color(0xFF00796B), // Darker teal color
                   ),
                   child: IconButton(
                     icon: const Icon(Icons.add),
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _getBodyContent(int index) {
     if (index == 0) {
-      return HomePageWidget();
+      return const HomePageWidget();
     } else {
       return const Text('Autre contenu');
     }
