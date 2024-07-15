@@ -1,5 +1,6 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'register_screen.dart';  // Ensure you have this import for navigation
 
 class GetStartedPage extends StatelessWidget with DelayHelperMixin {
   GetStartedPage({super.key});
@@ -64,26 +65,19 @@ class GetStartedPage extends StatelessWidget with DelayHelperMixin {
                     child: DelayedDisplay(
                       delay: getDelayDuration(),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.end,  // Align to the end
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              // Implement Skip Intro functionality if needed
-                            },
-                            child: Text(
-                              "Skip Intro",
-                              style: TextStyle(
-                                color: const Color(0xffffffff).withOpacity(0.42),
-                              ),
-                            ),
-                          ),
                           IntrinsicHeight(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 ElevatedButton(
                                   onPressed: () {
-                                    // Implement Next button functionality here
+                                    // Navigate to the RegisterScreen
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                                    );
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.green,
