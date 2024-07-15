@@ -22,6 +22,7 @@ dependencies:
   firebase_storage: ^12.0.1
   cloud_firestore: ^5.1.0
   fluttertoast: ^8.2.6
+  delayed_display: ^2.0.0
 
 flutter:
   uses-material-design: true

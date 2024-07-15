@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_coach/screens/get_started.dart';
 import 'package:go_coach/screens/login_screen.dart';
 import '../constants.dart'; // Assurez-vous que ce fichier contient la couleur kPrimaryColor
 
@@ -87,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const LoginScreen()),
+                              MaterialPageRoute(builder: (context) => GetStartedPage()),
                             );
                             print('Get Started button pressed!');
                           },
