@@ -67,6 +67,8 @@ dependencies {
     // Add the dependencies for Firebase products you want to use
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-appcheck'
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity'
 }
 
 apply plugin: 'com.google.gms.google-services'
