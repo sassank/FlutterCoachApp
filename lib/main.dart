@@ -1,8 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'screens/welcome_screen.dart';
-import 'firebase_options.dart'; // Ensure this file exists with your Firebase options
+import 'package:firebase_core/firebase_core.dart';
+import 'package:go_coach/screens/welcome_screen.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,10 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Go Coach',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kBackgroundColor,
+        primarySwatch: Colors.blue,
       ),
       home: const WelcomeScreen(),
     );
